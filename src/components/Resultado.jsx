@@ -22,7 +22,7 @@ const Texto = styled.p`
     background-color: rgb(245, 235, 235);
     box-shadow: 1px 1px 4px 2px rgb(182, 178, 178);
     padding:15px;
-    width: 250px;
+    width: 400px;
     text-align: start;
     height: 80px;
     margin: auto;
