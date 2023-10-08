@@ -74,6 +74,19 @@ function App() {
 		}
 	}, [monedas]);
 
+	useEffect(() => {
+		if (cargando) {
+			const container = document.getElementById('containerfull');
+			if (container) {
+				const containerTop = container.getBoundingClientRect().top;
+				window.scrollTo({
+					top: containerTop,
+					behavior: 'smooth',
+				});
+			}
+		}
+	}, [cargando]);
+
 	return (
 		<>
 			<Contenedor>
@@ -91,8 +104,8 @@ function App() {
 					/>
 				</div>
 			</Contenedor>
-			<ContenedorFull>
-				{cargando && <Spiner />}
+			<ContenedorFull id="containerfull">
+				{cargando && <Spiner id="#spiner" />}
 				{resultado.PRICE && <Resultado resultado={resultado} />}
 			</ContenedorFull>
 		</>
